@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "90289ad9-c1cd-4d8c-a03f-5043bb53ea1d",
+		"name": "Quidax API Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5623356",
+		"_collection_link": "https://proxyme.postman.co/workspace/Prime-Testing-Workspace~42dfbe4b-0dee-4220-9d32-2fc932501981/collection/5623356-90289ad9-c1cd-4d8c-a03f-5043bb53ea1d?action=share&source=collection_link&creator=5623356"
+	},
+	"item": [
+		{
+			"name": "List Objects",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Add new object",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"name\": \"Apple MacBook Pro 17\",\n   \"data\": {\n      \"year\": 2019,\n      \"price\": 1849.99,\n      \"CPU model\": \"Intel Core i9\",\n      \"Hard disk size\": \"1 TB\"\n   }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.restful-api.dev/objects",
+					"protocol": "https",
+					"host": [
+						"api",
+						"restful-api",
+						"dev"
+					],
+					"path": [
+						"objects"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "objects_count",
+			"value": ""
+		}
+	]
+}
