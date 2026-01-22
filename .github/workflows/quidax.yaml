@@ -1,0 +1,25 @@
+name: Quidax Test API
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  automated-api-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install Newman
+        run: |
+          npm install -g newman
+      - name: Run API tests with Newman
+        run: |
+          newman run "${{ github.workspace }}/postman/Quidax_API_Test.json" \
